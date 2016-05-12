@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.util.*;
 import java.io.*;
-
+//ciao
 public class NewEol{
 	public static void main(String[] args){
         String stringa_path = "";
