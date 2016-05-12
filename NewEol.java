@@ -7,6 +7,10 @@ import java.util.*;
 import java.io.*;
 
 public class NewEol{
+	
+	static final String 	EOL_WINDOWS = "\\\r\\\n",
+							EOL_UNIX = "\\\n";
+	
 	public static void main(String[] args){
         String stringa_path = "";
         String stringa_force = "";
@@ -38,10 +42,10 @@ public class NewEol{
                 switch (String.valueOf(args[i])){
 					
 					case "-w":
-						format_result = "\\n\\r";
+						format_result = EOL_WINDOWS;
 						break;
 					case "-u":
-						format_result = "\\n";
+						format_result = EOL_UNIX;
 						break;
 					case "-v":
 						verbose = true;
@@ -63,14 +67,11 @@ public class NewEol{
 	public static Boolean replaceeol(String s,String format){
 		Boolean result = false;
 		try{
+			
 			Path path = Paths.get(s);	
 			Charset charset = StandardCharsets.UTF_8;
 			String content = new String(Files.readAllBytes(path), charset);
-            if(format.equalsIgnoreCase("\\n\\r")){
-                content = content.replaceAll("\\n",format);
-            }else{
-                content = content.replaceAll("\\n\\r", format);   
-            }
+            content = content.replaceAll((EOL_UNIX+"|"+EOL_WINDOWS),format);
 			Files.write(path, content.getBytes(charset));
 			result = true;
 			return result;
