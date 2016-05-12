@@ -51,7 +51,6 @@ public class NewEol{
 				}
             }
             
-            System.out.println("asuydvsiucbasdiubaob");
             navigate(stringa_path,force,verbose,format_result);
             return;
 
@@ -67,7 +66,6 @@ public class NewEol{
 			Path path = Paths.get(s);	
 			Charset charset = StandardCharsets.UTF_8;
 			String content = new String(Files.readAllBytes(path), charset);
-            System.out.println(format);
             if(format.equalsIgnoreCase("\\n\\r")){
                 content = content.replaceAll("\\n",format);
             }else{
@@ -99,7 +97,6 @@ public class NewEol{
                     if (v){
                         System.out.println("Percorso corrente: "+file.getAbsolutePath());
                     }
-                    System.out.println("ciaoooooooooooo");
                     valid = replaceeol(file.getAbsolutePath(),format);
                          
                     if (!valid){
