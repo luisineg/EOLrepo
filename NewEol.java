@@ -8,6 +8,7 @@ import java.io.*;
 
 public class NewEol{
 	
+
 	static final String 	EOL_WINDOWS = "\\\r\\\n",
 							EOL_UNIX = "\\\n";
 	
@@ -21,7 +22,7 @@ public class NewEol{
         Boolean verbose = false;
 
         if(args.length == 1 && String.valueOf(args[0]).equalsIgnoreCase("-h")){
-            System.out.println("Uso:    java -jar ReplaceEol [-opzioni]");
+            System.out.println("Uso:    java -jar ReplaceEol <-Path> <-format> [-opzioni]");
             System.out.println("dove le opzioni sono:");
             System.out.println("    -h : help");
             System.out.println("    -w : windows eol format");
@@ -32,9 +33,16 @@ public class NewEol{
         }
         
         if(args.length != 3 && args.length != 4 && args.length != 2){
-            System.out.println("Errore di sintassi. java subsEol <path> <format> <forced_mode> <verbose>");
+            System.out.println("Errore di sintassi. java subsEol <-Path> <-format> [-option]");
+            System.out.println("Uso:    java -jar ReplaceEol <Path> [-opzioni]");
+            System.out.println("dove le opzioni sono:");
+            System.out.println("    -h : help");
+            System.out.println("    -w : windows eol format");
+            System.out.println("    -u : unix eol format");
+            System.out.println("    -f : forced mode");
+            System.out.println("    -v : verbose mode");
         }
-
+        
         try{
 			stringa_path = String.valueOf(args[0]);
 			/*Modifica nuova*/
