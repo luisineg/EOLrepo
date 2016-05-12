@@ -28,3 +28,4 @@ dove
 5.	Se è necessario eseguire l’analisi su altri percorsi non inclusi in quello precedente, riavviare il jar inserendo il Path desiderato.
 
 
+Per eventuali bug e/o problemi rivolgersi a : federico.ottena@maxwell.mi.it
