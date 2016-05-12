@@ -1,4 +1,3 @@
-
 import java.nio.file.Files;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -6,7 +5,7 @@ import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.util.*;
 import java.io.*;
-//ciao
+
 public class NewEol{
 	public static void main(String[] args){
         String stringa_path = "";
@@ -33,35 +32,26 @@ public class NewEol{
         }
 
         try{
-            for(int i = 0; i < args.length ; i++){
-                if(i==0){
-                    stringa_path = String.valueOf(args[0]);
-                }                
-                if(i==1){
-                    format = String.valueOf(args[1]);
-                }
-                if(i==2){
-                    stringa_force = String.valueOf(args[2]); 
-                }
-                if(i==3){
-                    v = String.valueOf(args[3]);
-                }
+			stringa_path = String.valueOf(args[0]);
+			/*Modifica nuova*/
+            for(int i = 1; i < args.length; i++){
+                switch (String.valueOf(args[i])){
+					
+					case "-w":
+						format_result = "\\n\\r";
+						break;
+					case "-u":
+						format_result = "\\n";
+						break;
+					case "-v":
+						verbose = true;
+						break;
+					case "-f":
+						force = true;
+				}
             }
-
-            if(format.equalsIgnoreCase("-w")){
-                format_result = "\\n\\r";
-            }else{
-                format_result = "\\n";
-            }
-
-            if(stringa_force.equalsIgnoreCase("-f")){
-                force = true;
-            }
-
-            if(v.equalsIgnoreCase("-v")){
-                verbose = true;
-            }    
             
+            System.out.println("asuydvsiucbasdiubaob");
             navigate(stringa_path,force,verbose,format_result);
             return;
 
@@ -77,6 +67,7 @@ public class NewEol{
 			Path path = Paths.get(s);	
 			Charset charset = StandardCharsets.UTF_8;
 			String content = new String(Files.readAllBytes(path), charset);
+            System.out.println(format);
             if(format.equalsIgnoreCase("\\n\\r")){
                 content = content.replaceAll("\\n",format);
             }else{
@@ -108,6 +99,7 @@ public class NewEol{
                     if (v){
                         System.out.println("Percorso corrente: "+file.getAbsolutePath());
                     }
+                    System.out.println("ciaoooooooooooo");
                     valid = replaceeol(file.getAbsolutePath(),format);
                          
                     if (!valid){
@@ -129,4 +121,5 @@ public class NewEol{
 
         return "File modificati : "+count_file+" - Cartelle/Sottocartelle : "+count_folder;
     }    
+    
 }
