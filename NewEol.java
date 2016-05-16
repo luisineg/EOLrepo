@@ -22,24 +22,32 @@ public class NewEol{
         Boolean verbose = false;
 
         if(args.length == 1 && String.valueOf(args[0]).equalsIgnoreCase("-h")){
+            System.out.println("Dettagli di utilizzo del tool : Il presente tool ha il compito di sostituire gli end of lines ");
+            System.out.println("dei file contenuti in un dato percorso con l\'end of line previsto dal formato Windows");
+            System.out.println("oppure Unix, scelto dall'utente.");
+            System.out.println("");
             System.out.println("Uso:    java -jar ReplaceEol <-Path> <-format> [-opzioni]");
             System.out.println("dove le opzioni sono:");
             System.out.println("    -h : help");
             System.out.println("    -w : windows eol format");
             System.out.println("    -u : unix eol format");
-            System.out.println("    -f : forced mode");
+            System.out.println("    -f : force mode");
             System.out.println("    -v : verbose mode");
             return;
         }
         
         if(args.length != 3 && args.length != 4 && args.length != 2){
+            System.out.println("Dettagli di utilizzo del tool : Il presente tool ha il compito di sostituire gli end of lines ");
+            System.out.println("dei file contenuti in un dato percorso con l\'end of line previsto dal formato Windows");
+            System.out.println("oppure Unix, scelto dall'utente.");
+            System.out.println("");
             System.out.println("Errore di sintassi. java subsEol <-Path> <-format> [-option]");
             System.out.println("Uso:    java -jar ReplaceEol <Path> [-opzioni]");
             System.out.println("dove le opzioni sono:");
             System.out.println("    -h : help");
             System.out.println("    -w : windows eol format");
             System.out.println("    -u : unix eol format");
-            System.out.println("    -f : forced mode");
+            System.out.println("    -f : force mode");
             System.out.println("    -v : verbose mode");
         }
         
