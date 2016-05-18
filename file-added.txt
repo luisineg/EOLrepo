@@ -1,4 +1,2 @@
-D copia.csv
-ProvaBash.jar
+D copia 2.csv
 file-added.txt
-prova.txt
