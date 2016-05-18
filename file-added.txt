@@ -1,1 +1,4 @@
-ByteCounter/2 copia.csv
+D copia.csv
+ProvaBash.jar
+file-added.txt
+prova.txt
