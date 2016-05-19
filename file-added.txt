@@ -1,2 +1,0 @@
-SWD.csv
-file-added.txt
